@@ -1,0 +1,217 @@
+@use "variables" as *; // @useルールを一番上に移動
+@use "mixins" as *;    // 複数の@useルールも一番上にまとめて記述
+@use "reset";
+
+
+// グローバルスタイル
+html {
+  padding-top: constant(safe-area-inset-top);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-left: constant(safe-area-inset-left);
+}
+
+body {
+  position: relative;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 12px;
+  font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+@media (max-width: $break-sp) {
+  body {
+    font-size: rate(22, $rateS);
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+*:focus {
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.o-spHide {
+  display: block !important;
+}
+
+@media (max-width: $break-sp) {
+  .o-spHide {
+    display: none !important;
+  }
+}
+
+.o-pcHide {
+  display: none !important;
+}
+
+@media (max-width: $break-sp) {
+  .o-pcHide {
+    display: block !important;
+  }
+}
+
+
+// 背景画像
+body {
+  background-image: url("../images/bg.jpg");
+  // background-color: var(--background-color2);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+// 背景アニメーション
+//-------------------------------
+.flower-container {
+  position: fixed;
+  top: 0;
+  left: 40%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.flower {
+  position: absolute;
+  background: url("../images/flower.svg") no-repeat center center;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  opacity: 0;
+  transform-origin: center center;
+  animation-name: fall-and-rotate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall-and-rotate {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg); /* 落下と回転 */
+    opacity: 0;
+  }
+}
+
+
+// header
+//-------------------------------
+header {
+
+  h1 {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    @include rsp_bg_img("title.svg", $rateL, true);
+
+    // @media (max-width: $break-sp) {
+    //   font-size: rate(24, $rateS);
+    //   line-height: 1.4; 
+    // }
+    // @media (max-width: $break-tb) {
+    //   font-size: rate(28, $rateM);
+    //   line-height: 1.3; 
+    // } 
+  }
+}
+
+
+// main
+//-------------------------------
+main {
+    width: 45%;
+    min-height: 100vh;
+    padding: 5% 0 0 5%;
+    background-color: var(--background-color);
+
+  li {
+    position: relative;
+    width: auto;
+    height: 77px;
+    margin: 0 0 40px;
+    padding-left: 97px;
+    color: var(--text-color);
+    text-align: left;
+    z-index: 10;
+
+    // @include rsp_bg_img("ico_item.png");
+    // background-size: 108px auto;
+
+    // @media (max-width: $break-sp) {
+    //   font-size: rate(16, $rateS);
+    // }
+    // @media (max-width: $break-tb) {
+    //   font-size: rate(18, $rateM);
+    // }
+
+    // &:nth-child(1) {
+    //   top: 30%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    // }
+
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.1s ease;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include rsp_bg_img("ico_flower.svg");
+      background-size: 77px auto;
+      background-position: 0 0;
+      transform: rotate(0deg);
+      transition: transform 0.8s ease-in-out, background-size 0.8s ease-in-out, opacity 0.8s ease-in-out;
+      opacity: 0.8;
+    }
+
+    &:hover {
+      opacity: 0.6;
+      &::before {
+        transform: rotate(45deg);
+        opacity: 0;
+        background-size: 100px auto;
+      }
+    }
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 18px;
+    opacity: 0.9;
+
+    > span {
+      display: block;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: normal;
+    }
+  }
+}
+
