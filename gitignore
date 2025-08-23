@@ -1,0 +1,12 @@
+# Vite
+/dist
+/node_modules
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE files
+.vscode/
+.idea/
