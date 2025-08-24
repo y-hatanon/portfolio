@@ -74,6 +74,7 @@ body {
   //   @include rsp_bg_img("bg.jpg", $rateM);
   // }
   @media (max-width: $break-sp) {
+    background-attachment: scroll;
     @include rsp_bg_img("bg_sp.jpg", $rateS);
     background-position: 0 0;
     width: 100vw;
