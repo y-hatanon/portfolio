@@ -108,7 +108,7 @@ ul, ol {
   }
 }
 body {
-  background-image: url("images/bg.jpg");
+  background-image: url("../images/bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -121,7 +121,7 @@ body {
 }
 @media (max-width: 768px) {
   body {
-    background-image: url("images/bg_sp.jpg");
+    background-image: url("../images/bg_sp.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -191,7 +191,7 @@ header h1 {
   bottom: 5.208vw;
   right: 5.208vw;
   z-index: 0;
-  background-image: url("images/title.svg");
+  background-image: url("../images/title.svg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -208,7 +208,7 @@ header h1 {
   header h1 {
     bottom: 10.417vw;
     right: 5.208vw;
-    background-image: url("images/title.svg");
+    background-image: url("../images/title.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -331,7 +331,7 @@ main li .tit small {
   font-weight: 200;
 }
 main li:nth-child(1) {
-  background-image: url("images/pic_ss01.jpg");
+  background-image: url("../images/pic_ss01.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -352,7 +352,7 @@ main li:nth-child(1):hover {
   opacity: 0.6;
 }
 main li:nth-child(2) {
-  background-image: url("images/pic_ss02.jpg");
+  background-image: url("../images/pic_ss02.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -373,7 +373,7 @@ main li:nth-child(2):hover {
   opacity: 0.6;
 }
 main li:nth-child(3) {
-  background-image: url("images/pic_ss03.jpg");
+  background-image: url("../images/pic_ss03.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -394,7 +394,7 @@ main li:nth-child(3):hover {
   opacity: 0.6;
 }
 main li:nth-child(4) {
-  background-image: url("images/pic_ss04.jpg");
+  background-image: url("../images/pic_ss04.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -415,7 +415,7 @@ main li:nth-child(4):hover {
   opacity: 0.6;
 }
 main li:nth-child(5) {
-  background-image: url("images/pic_ss05.jpg");
+  background-image: url("../images/pic_ss05.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -436,7 +436,7 @@ main li:nth-child(5):hover {
   opacity: 0.6;
 }
 main li:nth-child(6) {
-  background-image: url("images/pic_ss06.jpg");
+  background-image: url("../images/pic_ss06.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

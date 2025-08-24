@@ -50,7 +50,7 @@
     @warn "Unsupported rate: #{$rate}. Supported rates are: #{$rateS}, #{$rateM}, #{$rateL}.";
   }
 
-  background-image: url('images/#{$image-name}');
+  background-image: url('../images/#{$image-name}');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
