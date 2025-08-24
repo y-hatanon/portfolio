@@ -1,4 +1,4 @@
-import '../scss/main.scss';
+// import '../scss/main.scss';
 
 $(function() {
   const container = $('.flower-container');
