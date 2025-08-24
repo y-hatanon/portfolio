@@ -107,16 +107,17 @@ body {
   height: 120px;
   background-size: contain;
   opacity: 0;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
   transform-origin: center center;
-  animation-name: fall-and-rotate;
-  animation-iteration-count: infinite;
   @media (max-width: $break-sp) {
     width: rate(120, $rateS);
     height: rate(120, $rateS);
   }
 }
 
-@keyframes fall-and-rotate {
+@keyframes fall {
   0% {
     transform: translateY(-100px) rotate(0deg);
     opacity: 0;
@@ -129,7 +130,6 @@ body {
     opacity: 0;
   }
 }
-
 
 // header
 //-------------------------------
