@@ -142,7 +142,7 @@ header {
     @include rsp_bg_img("bg_sp.jpg", $rateS);
     background-position: 0 0;
     width: 100vw;
-    height: auto;
+    height: 100vh;
     z-index: -1;
   }
 

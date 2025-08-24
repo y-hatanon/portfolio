@@ -189,7 +189,7 @@ body {
     aspect-ratio: 0.562;
     background-position: 0 0;
     width: 100vw;
-    height: auto;
+    height: 100vh;
     z-index: -1;
   }
 }
