@@ -4,8 +4,8 @@ $(function() {
   const container = $('.flower-container');
 
   function createflower() {
-    const size = Math.random() * 70 + 40;
-    const duration = Math.random() * 10 + 5;
+    const size = Math.random() * 80 + 30; // サイズ
+    const duration = Math.random() * 7 + 5; // 落下時間
     const left = Math.random() * 100;
     const rotation = Math.random() * 360; // 初期回転
     const rotationSpeed = Math.random() * 60 - 30; // 回転速度（正と負で回転方向を変える）

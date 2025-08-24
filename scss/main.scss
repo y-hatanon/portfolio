@@ -3,6 +3,7 @@
 @use "reset";
 
 
+
 // グローバルスタイル
 html {
   padding-top: constant(safe-area-inset-top);
@@ -13,15 +14,17 @@ html {
 
 body {
   position: relative;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-size: 12px;
+  background: var(--background);
+  color: var(--text);
+  font-size: 14px;
   font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-}
-
-@media (max-width: $break-sp) {
-  body {
-    font-size: rate(22, $rateS);
+  font-weight: 400;
+  line-height: 1.3;
+  // @media (max-width: $break-tb) {
+  //   font-size: rate(28, $rateM);
+  // }
+  @media (max-width: $break-sp) {
+    font-size: rate(28, $rateS);
   }
 }
 
@@ -64,11 +67,18 @@ ul, ol {
 
 // 背景画像
 body {
-  background-image: url("../images/bg.jpg");
-  // background-color: var(--background-color2);
+  @include rsp_bg_img("bg.jpg");
   background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
+  overflow-x: hidden;
+  // @media (max-width: $break-tb) {
+  //   @include rsp_bg_img("bg.jpg", $rateM);
+  // }
+  @media (max-width: $break-sp) {
+    @include rsp_bg_img("bg_sp.jpg", $rateS);
+    background-position: 0 0;
+    width: 100vw;
+    height: auto;
+  }
 }
 
 // 背景アニメーション
@@ -76,23 +86,33 @@ body {
 .flower-container {
   position: fixed;
   top: 0;
-  left: 40%;
+  left: rate(670, $rateL);
   width: 100%;
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  // @media (max-width: $break-tb) {
+  //   left: rate(670, $rateM);
+  // }
+  @media (max-width: $break-sp) {
+    left: 0;
+  }
 }
 
 .flower {
   position: absolute;
-  background: url("../images/flower.svg") no-repeat center center;
-  width: 100px;
-  height: 100px;
+  background: url("/images/flower.svg") no-repeat center center;
+  width: 120px;
+  height: 120px;
   background-size: contain;
   opacity: 0;
   transform-origin: center center;
   animation-name: fall-and-rotate;
   animation-iteration-count: infinite;
+  @media (max-width: $break-sp) {
+    width: rate(120, $rateS);
+    height: rate(120, $rateS);
+  }
 }
 
 @keyframes fall-and-rotate {
@@ -113,21 +133,28 @@ body {
 // header
 //-------------------------------
 header {
+  position: relative;
+  width: 100vw;
+  height: auto;
 
   h1 {
     position: fixed;
-    bottom: 10%;
-    right: 5%;
+    bottom: rate(100, $rateL);
+    right: rate(100, $rateL);
+    z-index: 0;
     @include rsp_bg_img("title.svg", $rateL, true);
-
-    // @media (max-width: $break-sp) {
-    //   font-size: rate(24, $rateS);
-    //   line-height: 1.4; 
-    // }
     // @media (max-width: $break-tb) {
-    //   font-size: rate(28, $rateM);
-    //   line-height: 1.3; 
-    // } 
+    //   bottom: rate(100, $rateM);
+    //   right: rate(100, $rateM);
+    //   @include rsp_bg_img("title.svg", $rateM);
+    // }
+    @media (max-width: $break-sp) {
+      bottom: rate(80, $rateS);
+      right: rate(40, $rateS);
+      @include rsp_bg_img("title.svg", $rateS);
+      width: 60%;
+      height: auto;
+    }
   }
 }
 
@@ -135,83 +162,197 @@ header {
 // main
 //-------------------------------
 main {
-    width: 45%;
-    min-height: 100vh;
-    padding: 5% 0 0 5%;
-    background-color: var(--background-color);
+  position: relative;
+  width: rate(820, $rateL);
+  min-height: 100vh;
+  padding: rate(80, $rateL) 0 0 rate(150, $rateL);
+  // @media (max-width: $break-tb) {
+  //   width: rate(800, $rateM);
+  //   padding: rate(80, $rateM) 0 0 rate(130, $rateM);
+  // }
+  z-index: 1;
+  @media (max-width: $break-sp) {
+    width: 100vw;
+    padding: rate(80, $rateS) rate(80, $rateS) rate(370, $rateS);
+    overflow-x: hidden;
+  }
+
+  h2 {
+    margin-bottom: rate(20, $rateL);
+    font-size: rate(36, $rateL);
+    font-weight: 600;
+    // @media (max-width: $break-tb) {
+    //   margin-bottom: rate(20, $rateM);
+    //   font-size: rate(36, $rateM);
+    // }
+    @media (max-width: $break-sp) {
+      margin-bottom: rate(20, $rateS);
+      font-size: rate(40, $rateS);
+    }
+  }
+  .lead {
+    margin-bottom: rate(40, $rateL);
+    font-size: rate(20, $rateL);
+    line-height: 1.6;
+    // @media (max-width: $break-tb) {
+    //   margin-bottom: rate(40, $rateM);
+    //   font-size: rate(20, $rateM);
+    // }
+    @media (max-width: $break-sp) {
+      margin-bottom: rate(80, $rateS);
+      font-size: rate(24, $rateS);
+      line-height: 1.4;
+    }
+  }
 
   li {
     position: relative;
-    width: auto;
-    height: 77px;
-    margin: 0 0 40px;
-    padding-left: 97px;
-    color: var(--text-color);
+    width: rate(475, $rateL);
+    height: rate(247, $rateL);
+    margin: 0 0 rate(100, $rateL);
+    padding: 0;
+    color: var(--text);
     text-align: left;
+    line-height: 1.4;
     z-index: 10;
-
-    // @include rsp_bg_img("ico_item.png");
-    // background-size: 108px auto;
-
-    // @media (max-width: $break-sp) {
-    //   font-size: rate(16, $rateS);
-    // }
     // @media (max-width: $break-tb) {
-    //   font-size: rate(18, $rateM);
+    //   width: rate(475, $rateM);
+    //   height: rate(247, $rateM);
+    //   margin: 0 0 rate(100, $rateM);
     // }
-
-    // &:nth-child(1) {
-    //   top: 30%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    // }
-
-  }
-
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.1s ease;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      @include rsp_bg_img("ico_flower.svg");
-      background-size: 77px auto;
-      background-position: 0 0;
-      transform: rotate(0deg);
-      transition: transform 0.8s ease-in-out, background-size 0.8s ease-in-out, opacity 0.8s ease-in-out;
-      opacity: 0.8;
+    @media (max-width: $break-sp) {
+      width: 100%;
+      height: auto;
+      margin: 0 0 rate(80, $rateS);
     }
 
-    &:hover {
-      opacity: 0.6;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: var(--link);
+      transition: all 0.2s ease-in-out;
+      
       &::before {
-        transform: rotate(45deg);
-        opacity: 0;
-        background-size: 100px auto;
+        content: "";
+        position: absolute;
+        top: rate(220, $rateL);
+        left: 0;
+        width: rate(374, $rateL);
+        height: rate(80, $rateL);
+        background-color: #000;
+        opacity: 0.6;
+        // @media (max-width: $break-tb) {
+        //   top: rate(220, $rateM);
+        //   width: rate(374, $rateM);
+        //   height: rate(80, $rateM);
+        // }
+        @media (max-width: $break-sp) {
+          top: rate(180, $rateS);
+          left: auto;
+          right: rate(-80, $rateS);
+          width: rate(410, $rateS);
+          height: rate(80, $rateS);
+        }
+      }
+    } 
+    
+    .tit {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      top: rate(220, $rateL);
+      left: 0;
+      width: rate(374, $rateL);
+      height: rate(80, $rateL);
+      padding-left: 1em;
+      font-size: rate(20, $rateL);
+      font-weight: 400;
+      // @media (max-width: $break-tb) {
+      //   top: rate(220, $rateM);
+      //   width: rate(374, $rateM);
+      //   height: rate(80, $rateM);
+      //   font-size: rate(20, $rateM);
+      // }
+      @media (max-width: $break-sp) {
+        top: rate(180, $rateS);
+        left: rate(210, $rateS);
+        width: rate(374, $rateS);
+        height: rate(80, $rateS);
+        padding: 0;
+        font-size: rate(24, $rateS);
+        text-align: right;
+      }
+
+      small {
+        font-weight: 200;
+      }
+    }
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        @include rsp_bg_img('pic_ss0#{$i}.jpg');
+        width: rate(475, $rateL);
+        height: rate(247, $rateL);
+        // @media (max-width: $break-tb) {
+        //   width: rate(475, $rateM);
+        //   height: rate(247, $rateM);
+        // }
+        @media (max-width: $break-sp) {
+          width: rate(530, $rateS);
+          height: auto;
+        }
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      left: rate(215, $rateL);
+      a::before {
+        left: auto;
+        right: 0;
+      }
+      .tit {
+        left: rate(100, $rateL);
+      }
+      // @media (max-width: $break-tb) {
+      //   left: rate(195, $rateM);
+      //   .tit {
+      //     left: rate(100, $rateM);
+      //   }
+      // }
+      @media (max-width: $break-sp) {
+        left: 0;
+        a::before {
+          left: auto;
+          right: rate(-80, $rateS);
+        }
+        .tit {
+        left: rate(210, $rateS);
+        }
       }
     }
   }
 
-  p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    font-size: 18px;
-    opacity: 0.9;
 
-    > span {
-      display: block;
-      font-size: 14px;
-      line-height: 1.5;
-      font-weight: normal;
-    }
+}
+
+footer {
+  padding-bottom: 1em;
+  text-align: center;
+  small {
+    color: #fff;
+    font-weight: 200;
+  }
+  @media (max-width: $break-sp) {
+    position: fixed;
+    bottom: rate(20, $rateS);
+    width: 100vw;
+    padding: 0;
   }
 }
 

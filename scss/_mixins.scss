@@ -4,10 +4,16 @@
 @use "sass:math";
 @use "image-sizes" as *;
 
-
-@function rate($size, $rate) {
-  @return math.div($size, $rate) * 100vw;
+// 小数点以下3桁で四捨五入
+@function round-num($number) {
+  @return math.div(math.round($number * 1000), 1000);
 }
+
+// レスポンシブ対応のフォントサイズ・要素サイズ計算
+@function rate($size, $rate) {
+  $result: math.div($size, $rate) * 100vw;
+  @return round-num($result);
+}  
 
 @mixin image-replace {
   font: 0/0 a;
@@ -28,30 +34,31 @@
 
   $img-width: map.get($size-map, "width");
   $img-height: map.get($size-map, "height");
+  $width: math.div($img-width, 1);
+  $height: math.div($img-height, 1);
 
   // レートによるサイズ調整
   @if $rate == $rateS {
-    $img-width: math.div($img-width, 2);
-    $img-height: math.div($img-height, 2);
+    $width: math.div($img-width, 2);
+    $height: math.div($img-height, 2);
   } @else if $rate == $rateM {
-    $img-width: math.div($img-width, 2);
-    $img-height: math.div($img-height, 2);
+    $width: math.div($img-width, 1.5);
+    $height: math.div($img-height, 1.5);
   } @else if $rate == $rateL {
     // 何もしない
   } @else {
     @warn "Unsupported rate: #{$rate}. Supported rates are: #{$rateS}, #{$rateM}, #{$rateL}.";
   }
 
-  $img-width-vw: math.div($img-width, $rate) * 100vw;
-
   background-image: url('/images/#{$image-name}');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: $img-width-vw;
+  width: round-num(math.div($width, $rate) * 100vw);
+  height: round-num(math.div($height, $rate) * 100vw);
   max-width: 100vw;
-  aspect-ratio: math.div($img-width, $img-height);
-  
+  aspect-ratio: round-num(math.div($width, $height));
+
   @if $text == true {
     @include image-replace;
   }
