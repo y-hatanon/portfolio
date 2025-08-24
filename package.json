@@ -7,7 +7,7 @@
   "scripts": {
     "getimgsizes": "node ./js/getImageSizes.js",
     "dev": "vite && npm run scss:watch",
-    "build": "vite build",
+    "build": "node ./js/getImageSizes.js && vite build",
     "preview": "vite preview",
     "scss:watch": "npx sass --watch scss/main.scss css/main.css --no-source-map"
   },
