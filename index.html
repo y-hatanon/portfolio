@@ -1,45 +1,208 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex,nofollow" />
-    <title>portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="module" src="js/main.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Hatano Yumi - Web / Frontend Portfolio">
+  <title>Portfolio | Hatano Yumi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
 
-  <body>
-    <div class="flower-container"></div>
-    
-    <header>
-      <h1>portfolio</h1>
-    </header>
-  
-    <main>
-      <h2>制作実績</h2>
-      <p class="lead">2019～2025年に制作したものからいくつかをピックアップしています。<br>
-      コーディングは主にhtml/cssを担当。開発環境：Compass、Vite。
-      ※Vue、React＋TailwindCSS、Astroでの制作経験もあります（一番下の案件がReact＋TailwindCSSでした））
-      </p>
+<body id="top">
 
-      <ul>
-        <li><a href="https://yokai-punipuni.jp/" target="_sample"><span class="tit">妖怪ウォッチ ぷにぷに<small>2019年制作</small></span></a></li>
-        <li><a href="https://app.nhn-playart.com/compass/" target="_sample"><span class="tit">#コンパス 戦闘摂理解析システム<small>2021年制作</small></span></a></li>
-        <li><a href="https://app.nhn-playart.com/compass/event/primeart/" target="_sample"><span class="tit">#コンパス プライムアート展<small>2021年制作</small></span></a></li>
-        <li><a href="https://www.nhn-playart.com/" target="_sample"><span class="tit">NHN PlayArt株式会社<small>2022年制作</small></span></a></li>
-        <li><a href="https://app.nhn-playart.com/compass/jinrou/" target="_sample"><span class="tit">#コンパス人狼<small>2023年制作</small></span></a></li>
-        <li><a href="https://recruit.nhn-japan.com/benefit" target="_sample"><span class="tit">NHN Group リクルートサイト<small>2025年制作</small></span></a></li>
-      </ul>
-    </main>
+<header>
+  <div class="inner">
+    <nav>
+      <a href="#works">Works</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#process">Process</a>
+    </nav>
+  </div>
+</header>
 
-    <footer>
-      <small class="text">portfolio @2025 hatano-yumi</small>
-    </footer>
+<main>
+  <section class="hero">
+    <div class="inner">
+      <div class="content">
+        <p class="label">Web / Frontend</p>
+        <h1>Portfolio</h1>
+        <p class="lead">Webサイトの構造設計・マークアップを中心に、Web制作に長く携わってきました。<br>デザインの意図と運用しやすさの両方を考えながら、サイト制作・運用・改修を行ってきました。</p>
+        <a class="button" href="#works">制作実績を見る</a>
+      </div>
+    </div>
+  </section>
 
-  </body>
+  <section class="works" id="works">
+    <div class="inner">
+      <div class="heading">
+        <p class="label">Works</p>
+        <h2>制作実績</h2>
+        <p>前職在職中に制作したWebサイトから、現在も閲覧可能なものを中心に掲載しています。公式サイト、コーポレートサイト、採用サイトのほか、単発のイベントページなども含みます。</p>
+      </div>
+
+      <div class="list">
+        <article class="work">
+          <a class="image" href="https://yokai-punipuni.jp/" target="_blank" rel="noopener noreferrer">
+            <img src="images/pic_ss01.jpg" alt="妖怪ウォッチ ぷにぷに 公式サイト">
+          </a>
+          <p class="meta">2019 / 公式サイト・LP</p>
+          <h3>妖怪ウォッチ ぷにぷに</h3>
+          <p class="text">>LP・公式サイトの構造設計、マークアップを担当しました。</p>
+          <a class="link" href="https://yokai-punipuni.jp/" target="_blank" rel="noopener noreferrer">サイトを見る <span>↗</span></a>
+        </article>
+
+        <article class="work">
+          <a class="image" href="https://app.nhn-playart.com/compass/" target="_blank" rel="noopener noreferrer">
+            <img src="images/pic_ss02.jpg" alt="#コンパス 戦闘摂理解析システム 公式サイト">
+          </a>
+          <p class="meta">2021 / 公式サイト</p>
+          <h3>#コンパス 戦闘摂理解析システム</h3>
+          <p class="text">公式サイトリニューアルで、構造設計・マークアップを担当しました。</p>
+          <a class="link" href="https://app.nhn-playart.com/compass/" target="_blank" rel="noopener noreferrer">サイトを見る <span>↗</span></a>
+        </article>
+
+        <article class="work">
+          <a class="image" href="https://app.nhn-playart.com/compass/event/primeart/" target="_blank" rel="noopener noreferrer">
+            <img src="images/pic_ss03.jpg" alt="#コンパス プライムアート展 イベントページ">
+          </a>
+          <p class="meta">2021 / イベントページ</p>
+          <h3>#コンパス プライムアート展</h3>
+          <p class="text">単発イベントページのマークアップを担当しました。</p>
+          <a class="link" href="https://app.nhn-playart.com/compass/event/primeart/" target="_blank" rel="noopener noreferrer">サイトを見る <span>↗</span></a>
+        </article>
+
+        <article class="work">
+          <a class="image" href="https://www.nhn-playart.com/" target="_blank" rel="noopener noreferrer">
+            <img src="images/pic_ss04.jpg" alt="NHN PlayArt株式会社 コーポレートサイト">
+          </a>
+          <p class="meta">2022 / コーポレートサイト</p>
+          <h3>NHN PlayArt株式会社</h3>
+          <p class="text">コーポレートサイトの構造設計・マークアップを担当しました。</p>
+          <a class="link" href="https://www.nhn-playart.com/" target="_blank" rel="noopener noreferrer">サイトを見る <span>↗</span></a>
+        </article>
+
+        <article class="work">
+          <a class="image" href="https://app.nhn-playart.com/compass/jinrou/" target="_blank" rel="noopener noreferrer">
+            <img src="images/pic_ss05.jpg" alt="#コンパス人狼 公式サイト">
+          </a>
+          <p class="meta">2023 / 公式サイト</p>
+          <h3>#コンパス人狼</h3>
+          <p class="text">公式サイトの構造設計・マークアップを担当しました。</p>
+          <a class="link" href="https://app.nhn-playart.com/compass/jinrou/" target="_blank" rel="noopener noreferrer">サイトを見る <span>↗</span></a>
+        </article>
+
+        <article class="work">
+          <a class="image" href="https://recruit.nhn-japan.com/benefit" target="_blank" rel="noopener noreferrer">
+            <img src="images/pic_ss06.jpg" alt="NHN Group リクルートサイト">
+          </a>
+          <p class="meta">2025 / 採用サイト</p>
+          <h3>NHN Group リクルートサイト</h3>
+          <p class="text">福利厚生ページをReact / Tailwind CSSで制作しました。</p>
+          <a class="link" href="https://recruit.nhn-japan.com/benefit" target="_blank" rel="noopener noreferrer">サイトを見る <span>↗</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="inner">
+      <div class="heading">
+        <p class="label">About</p>
+        <h2>これまでの経験</h2>
+      </div>
+
+      <div class="columns">
+        <div class="profile">
+          <p>Web制作に長く携わり、直近約19年間は自社サービスやゲーム関連サイトを中心に、LP、イベント・キャンペーンページ、コーポレートサイト、採用サイトなどを制作してきました。</p>
+          <p>主な担当はWebページの構造設計とマークアップです。案件に応じてJavaScriptによる演出実装や、長期運用を見据えた更新しやすい構造の設計にも携わりました。</p>
+          <p>企画・デザイン・開発担当者とのキックオフから参加し、要件と工数のすり合わせ、UI/UXの改善提案、演出方法の検討、必要に応じたモック制作なども行ってきました。</p>
+        </div>
+
+        <div class="approach">
+          <h3>制作で大切にしていること</h3>
+            <p>デザイナーの意図をできるだけ損なわず、実装・運用面でも無理のない形に落とし込むことを意識しています。</p>
+            <p>制作時だけでなく、その後の更新や改修まで考慮し、必要以上に複雑にしない構造を心がけています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="inner">
+      <div class="heading">
+        <p class="label">Skills</p>
+        <h2>スキル</h2>
+      </div>
+
+      <dl>
+        <div>
+          <dt>フロントエンド</dt>
+          <dd>HTML / HTML5 / CSS / Sass (SCSS) / JavaScript / jQuery</dd>
+        </div>
+        <div>
+          <dt>案件での使用経験</dt>
+          <dd>React / Next.js / Vue / Nuxt / Astro / Tailwind CSS</dd>
+        </div>
+        <div>
+          <dt>制作データの確認・調整</dt>
+          <dd>Photoshop / Illustrator / Figma ※コーディングに必要な範囲で使用</dd>
+        </div>
+        <div>
+          <dt>開発・制作環境</dt>
+          <dd>Git / GitHub / GitLab / SVN / Vite / VS Code</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="workflow" id="process">
+    <div class="inner">
+      <div class="heading">
+        <p class="label">Process</p>
+        <h2>制作の進め方</h2>
+      </div>
+
+      <div class="content">
+        <p class="process">要件確認 <span>→</span> 構造設計 <span>→</span> 実装 <span>→</span> 確認・改善</p>
+        <p>企画・デザイン・開発担当者と要件や工数を確認し、公開後の運用や改修も考慮しながら構造と実現方法を整理します。
+  必要に応じてUI/UXや演出方法を提案し、実装後は表示や動作を確認して調整・改善を行います。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ai">
+    <div class="inner">
+      <div class="heading">
+        <p class="label">Focus</p>
+        <h2>現在の取り組み</h2>
+      </div>
+
+      <div class="content">
+        <h3>生成AIを活用した制作効率化</h3>
+        <p>
+          現在は、制作時の作業工数を減らせるか検証するため、情報整理・調査・コーディング・画像制作の補助に生成AIを試験的に取り入れています。<br>
+          出力内容はそのまま使用せず、確認・修正したうえで利用しています。<br>
+          PhotoshopをはじめとするAdobe製品の生成AI機能についても、実制作でどこまで活用できるか検証しています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Portfolio</p>
+    <small>© 2026 Hatano Yumi</small>
+  </div>
+  <a class="pagetop" href="#top" aria-label="ページ上部へ戻る">↑</a>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
 </html>

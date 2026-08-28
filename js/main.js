@@ -1,31 +1,73 @@
-$(function() {
-  const container = $('.flower-container');
+const works = document.querySelectorAll(".work");
 
-  function createflower() {
-    const size = Math.random() * 80 + 30;
-    const duration = Math.random() * 7 + 5;
-    const left = Math.random() * 100;
-    const rotation = Math.random() * 360;
-    const rotationSpeed = Math.random() * 60 - 30;
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-    const flower = $('<div>')
-      .addClass('flower')
-      .css({
-        width: size + 'px',
-        height: size + 'px',
-        left: left + '%',
-        transform: `rotate(${rotation}deg)`, // 初期回転
-        'animation-duration': `${duration}s`, // アニメーション時間
-        'animation-name': 'fall' // 落下アニメーション
-      })
-      .appendTo(container);
+        entry.target.classList.add("is-show");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      root: null,
+      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.15
+    }
+  );
 
-    // アニメーション終了後に削除
-    flower.on('animationend', function() {
-      $(this).remove();
-    });
-  }
+  works.forEach((work) => {
+    observer.observe(work);
+  });
+} else {
+  works.forEach((work) => {
+    work.classList.add("is-show");
+  });
+}
 
-  createflower();
-  setInterval(createflower, 1000);
-});
+const pagetop = document.querySelector(".pagetop");
+const footer = document.querySelector("footer");
+
+if (pagetop) {
+  const togglePagetop = () => {
+    if (window.scrollY > 300) {
+      pagetop.classList.add("is-show");
+    } else {
+      pagetop.classList.remove("is-show");
+    }
+  };
+
+  const adjustPagetop = () => {
+    if (!footer) {
+      return;
+    }
+
+    const footerRect = footer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const baseBottom = 24;
+    const margin = 16;
+
+    if (footerRect.top < windowHeight) {
+      const overlap = windowHeight - footerRect.top;
+      pagetop.style.bottom = `${overlap + margin}px`;
+    } else {
+      pagetop.style.bottom = `${baseBottom}px`;
+    }
+  };
+
+  const updatePagetop = () => {
+    togglePagetop();
+    adjustPagetop();
+  };
+
+  updatePagetop();
+
+  window.addEventListener("scroll", updatePagetop, {
+    passive: true
+  });
+
+  window.addEventListener("resize", adjustPagetop);
+}

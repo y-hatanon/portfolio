@@ -1,20 +1,30 @@
-// _mixins.scss
 @use "variables" as *;
 @use "sass:map";
 @use "sass:math";
 @use "image-sizes" as *;
+
 
 // 小数点以下3桁で四捨五入
 @function round-num($number) {
   @return math.div(math.round($number * 1000), 1000);
 }
 
-// レスポンシブ対応のフォントサイズ・要素サイズ計算
+
+// レスポンシブ対応のサイズ計算
 @function rate($size, $rate) {
   $result: math.div($size, $rate) * 100vw;
-  @return round-num($result);
-}  
 
+  @return round-num($result);
+}
+
+
+// 画面幅に応じたフォントサイズ
+@mixin rsp_font($min, $size, $max, $rate: $rateL) {
+  font-size: clamp(#{$min}px, rate($size, $rate), #{$max}px);
+}
+
+
+// 画像置換
 @mixin image-replace {
   font: 0/0 a;
   text-indent: 100%;
@@ -22,8 +32,9 @@
   overflow: hidden;
 }
 
+
 /// 画像名から背景画像・サイズ・アスペクト比を一括適用
-/// @param {string} $image-name - `$image-sizes`に定義された画像名
+/// @param {string} $image-name - `$image-sizes` に定義された画像名
 /// @param {number} $rate - 画面の最大幅
 @mixin rsp_bg_img($image-name, $rate: $rateL, $text: false) {
   $size-map: map.get($image-sizes, $image-name);
@@ -37,7 +48,6 @@
   $width: math.div($img-width, 1);
   $height: math.div($img-height, 1);
 
-  // レートによるサイズ調整
   @if $rate == $rateS {
     $width: math.div($img-width, 2);
     $height: math.div($img-height, 2);
@@ -50,7 +60,7 @@
     @warn "Unsupported rate: #{$rate}. Supported rates are: #{$rateS}, #{$rateM}, #{$rateL}.";
   }
 
-  background-image: url('/images/#{$image-name}');
+  background-image: url("/images/#{$image-name}");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,19 +1,22 @@
-// color variables
+// Color
 :root {
-  --primary: #333;
-  --secondary: #6377f3;
-  --accent: #8a8e69;
-  --link: #fff;
-  --shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  --background: #f5f5f2;
+  --background-sub: #ecece6;
+  --text: #1f1f1f;
+  --text-sub: #6b6b66;
+  --line: #d8d8d0;
+  --accent: #65705c;
+  --white: #fff;
 }
 
-// media query breakpoints
+
+// Breakpoints
 $break-sp: 768px;
 $break-tb: 1200px;
 $break-pc: 1920px;
 
+
+// Responsive rate
 $rateS: 768;
 $rateM: 1200;
 $rateL: 1920;
-
-
