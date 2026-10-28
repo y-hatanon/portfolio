@@ -382,28 +382,28 @@ section + section {
       width: 100%;
       aspect-ratio: 16 / 9;
       margin-bottom: 24px;
-      background: var(--background-sub);
+      // background: var(--background);
       overflow: hidden;
 
       &::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(101, 112, 92, 0);
+        // background: rgba(101, 112, 92, 0);
         transition: background 0.35s ease;
       }
 
       & > img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         transition: transform 0.65s ease, filter 0.45s ease;
       }
 
       &:hover {
-        &::after {
-          background: rgba(101, 112, 92, 0.07);
-        }
+        // &::after {
+        //   background: rgba(101, 112, 92, 0.07);
+        // }
 
         & > img {
           transform: scale(1.025);
@@ -831,5 +831,29 @@ footer {
       opacity: 1;
       transform: none;
     }
+  }
+}
+// Additional portfolio links and personal project metadata
+.button--secondary {
+  margin-left: 10px;
+  background: rgba(255, 255, 255, 0.12);
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+  }
+}
+
+.personal-projects {
+  background: var(--background-sub);
+
+  .project-stack {
+    margin-top: 12px;
+    color: var(--text-sub);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  .project-image {
+    cursor: default;
   }
 }

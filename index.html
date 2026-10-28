@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="Hatano Yumi - Web / Frontend Portfolio">
-  <title>Portfolio | Hatano Yumi</title>
+  <meta name="theme-color" content="#f5f5f2">
+  <title>Web制作・フロントエンド開発 ポートフォリオ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
   <div class="inner">
     <nav>
       <a href="#works">Works</a>
+      <a href="#projects">Personal Projects</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#process">Process</a>
@@ -29,10 +30,11 @@
   <section class="hero">
     <div class="inner">
       <div class="content">
-        <p class="label">Web / Frontend</p>
+        <p class="label">WEB PRODUCTION / FRONTEND DEVELOPMENT</p>
         <h1>Portfolio</h1>
-        <p class="lead">Webサイトの構造設計・マークアップを中心に、Web制作に長く携わってきました。<br>デザインの意図と運用しやすさの両方を考えながら、サイト制作・運用・改修を行ってきました。</p>
-        <a class="button" href="#works">制作実績を見る</a>
+        <p class="lead">Web制作に約19年間携わり、構造設計・マークアップを軸に、公式サイトやキャンペーンページの制作・運用・改修を担当してきました。<br>要件とデザインの意図をくみ取り、保守性や運用まで見据えた実装を大切にしています。近年はReact / Tailwind CSSを用いた実務や、生成AIを活用した個人Webアプリ開発にも取り組んでいます。</p>
+        <a class="button" href="#works">実務実績を見る</a>
+        <a class="button button--secondary" href="#projects">個人開発を見る</a>
       </div>
     </div>
   </section>
@@ -42,7 +44,7 @@
       <div class="heading">
         <p class="label">Works</p>
         <h2>制作実績</h2>
-        <p>前職在職中に制作したWebサイトから、現在も閲覧可能なものを中心に掲載しています。公式サイト、コーポレートサイト、採用サイトのほか、単発のイベントページなども含みます。</p>
+        <p>実務で担当したWebサイトの一部を掲載しています。構造設計・マークアップを中心に、案件ごとの担当範囲を記載しています。</p>
       </div>
 
       <div class="list">
@@ -52,7 +54,7 @@
           </a>
           <p class="meta">2019 / 公式サイト・LP</p>
           <h3>妖怪ウォッチ ぷにぷに</h3>
-          <p class="text">>LP・公式サイトの構造設計、マークアップを担当しました。</p>
+          <p class="text">LP・公式サイトの構造設計、マークアップを担当しました。</p>
           <a class="link" href="https://yokai-punipuni.jp/" target="_blank" rel="noopener noreferrer">サイトを見る <span>↗</span></a>
         </article>
 
@@ -109,6 +111,39 @@
     </div>
   </section>
 
+  <section class="works personal-projects" id="projects">
+    <div class="inner">
+      <div class="heading">
+        <p class="label">Personal Projects</p>
+        <h2>個人開発</h2>
+        <p>課題の整理から仕様検討、実装、改善まで自分で進めているWebアプリです。生成AIも開発補助として活用し、出力を確認・修正しながら制作しています。</p>
+      </div>
+
+      <div class="list">
+        <article class="work">
+          <a class="image" href="https://web-writing-app.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <img src="images/pic_ss07.jpg" alt="お手軽小説執筆NOTEの画面イメージ">
+          </a>
+          <p class="meta">公開中 / 個人開発 / AI活用</p>
+          <h3>お手軽小説執筆NOTE</h3>
+          <p class="text">小説執筆を支援するWebアプリ。Web原稿合宿で使用するための簡易執筆アプリとして開発を開始。執筆時の使いやすさを重視し、文章の作成・整理を行える環境を設計・実装しました。</p>
+          <p class="project-stack">HTML / CSS / JavaScript</p>
+          <a class="link" href="https://web-writing-app.netlify.app/" target="_blank" rel="noopener noreferrer">公開アプリを見る <span>↗</span></a>
+        </article>
+
+        <article class="work">
+          <div class="image project-image">
+            <img src="images/pic_ss08.jpg" alt="漫画ネームエディターの画面イメージ">
+          </div>
+          <p class="meta">開発中 / 個人開発 / AI活用</p>
+          <h3>漫画ネームエディター</h3>
+          <p class="text">漫画のプロット・字コンテから、コマ割り、セリフの編集まで、ネーム作成を支援するWebアプリ。実際の制作フローをもとに仕様を整理し、操作性やデータ管理、書き出し機能を段階的に設計・実装しています。</p>
+          <p class="project-stack">HTML / CSS / JavaScript</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="about" id="about">
     <div class="inner">
       <div class="heading">
@@ -120,7 +155,7 @@
         <div class="profile">
           <p>Web制作に長く携わり、直近約19年間は自社サービスやゲーム関連サイトを中心に、LP、イベント・キャンペーンページ、コーポレートサイト、採用サイトなどを制作してきました。</p>
           <p>主な担当はWebページの構造設計とマークアップです。案件に応じてJavaScriptによる演出実装や、長期運用を見据えた更新しやすい構造の設計にも携わりました。</p>
-          <p>企画・デザイン・開発担当者とのキックオフから参加し、要件と工数のすり合わせ、UI/UXの改善提案、演出方法の検討、必要に応じたモック制作なども行ってきました。</p>
+          <p>企画・デザイン・開発担当者とのキックオフから参加し、要件と工数のすり合わせ、UI/UXの改善提案、演出方法の検討、必要に応じたモック制作なども行ってきました。個人開発では、利用場面の整理から仕様決定・実装・改善まで一貫して取り組んでいます。</p>
         </div>
 
         <div class="approach">
@@ -183,11 +218,11 @@
       </div>
 
       <div class="content">
-        <h3>生成AIを活用した制作効率化</h3>
+        <h3>生成AIを開発プロセスの補助として活用</h3>
         <p>
-          現在は、制作時の作業工数を減らせるか検証するため、情報整理・調査・コーディング・画像制作の補助に生成AIを試験的に取り入れています。<br>
-          出力内容はそのまま使用せず、確認・修正したうえで利用しています。<br>
-          PhotoshopをはじめとするAdobe製品の生成AI機能についても、実制作でどこまで活用できるか検証しています。
+          要件や仕様の整理、実装案の検討、コーディング、文章・画像制作の補助などに生成AIを活用しています。<br>
+          出力をそのまま採用するのではなく、目的や既存コードとの整合性を確認し、必要な修正と動作確認を行うことを重視しています。<br>
+          AIを使うこと自体を目的にせず、品質と作業効率の両面から有効性を検証しています。
         </p>
       </div>
     </div>
